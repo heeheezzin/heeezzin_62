@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title></title>
+   <style type="text/css";>
+      
+
+
+        
+        input[type="button"]{background:#238900; }
+        input[type="number"]{background:#ffde00;}
+        
+
+        body{text-align: center; background-color: #ffde00; font-size: 20px; padding: 60px; }
+
+        h1{text-align: center;  font-size: 50px; text-shadow: 10px,10px 10px gray inset;  }
+        h2{text-align: center; font-size: 20px; width:1000px; padding-bottom: 30px; padding-top: 8px;  }
+
+        h3{text-align: center; font-size: 16px; width:1000px; padding-bottom: 12px; padding-top: 12px;  }
+
+
+        p{text-align: center;  font-size: 15px; margin: 9px;  }
+        .why{width: 1000px;background-color: #ffffff; ; text-align: center;padding-top:10px; padding-bottom: 10px; margin-bottom: 30px;}
+        .wrap{width: 1000px; padding-top: 30px; padding-bottom: 30px; margin:auto; text-align: center;background-color: #ffffff;} 
+
+        .wra{width: 1000px; margin:auto; text-align: center;}
+        #mmonitor {text-align: center; font-size: 20px; width:1000px; padding-top: 45px; padding-bottom: 18px;  }
+        #okbut{width: 150px; margin:auto; text-align: center; padding-top: 5px; padding-bottom: 5px; margin-top: 20px;}
+
+
+   </style>
+</head>
+<body>
+   <header>
+      <div class="wra">
+      <div class="why">
+        <h1>선물포장지의 이상적인 면적 구하기 </h1></div><br>
+        
+       <input type="date">
+       <input type="text" placeholder="이름을 입력하세요." id="">
+       <br><br>
+
+        <p>
+            조금 덜 자르면 선물을 다 포장할 수 없고, <br>
+            너무 크게 자르면 포장지가 낭비되죠. <br>
+            선물을 포장할 때 알아두면 유익한 팁!<br>
+            낭비하지 않고 최소한의 포장지를 사용하기 위한 공식입니다.
+            <br><br>
+            (* 단, 직육면체 모양에 한정입니다!)
+        </p>
+
+        <br><br>
+       
+    </header>
+    <div class="wrap">
+
+    <h2>당신이 포장할 선물의 각 길이를 측정해 적어주세요.</h2>
+ 
+
+
+   
+
+   
+
+
+   <h3>가로길이(cm) <input type="number" id="garo"  >
+    <!--placeholder="당신의 키를 cm단위로 입력하시오."-->
+    <div id="garo2"></div> </h2> 
+
+
+
+
+    <h3>세로길이(cm) <input type="number" id="sero"  >
+    <!--placeholder="당신의 키를 cm단위로 입력하시오."-->
+    <div id="sero2"></div></h2> 
+
+
+
+   <h3>높이(cm)<input type="number" id="nop" >
+
+    <div id="nop2"></div></h2> 
+
+    
+
+
+
+    <input type="button" value="포장지의 사이즈는?" id="okbut">
+    <div id="mmonitor"> 이곳에 결과값이 출력됩니다. </div>
+    <!--id로 이름지정-->
+
+
+    <script type="text/javascript">
+
+        
+
+        garo.oninput=function(){
+          garo2.innerHTML=garo.value;
+        }
+
+       sero.oninput=function(){
+           sero2.innerHTML=sero.value;
+       }
+
+        
+        
+        nop.oninput=function(){
+            nop2.innerHTML= nop.value;
+        }     
+
+
+
+
+        okbut.onclick = function(){
+
+            
+             //var ideala= garo.value*sero.value
+             //var idealb= sero.value*nop.value
+             //var idealc= garo.value*nop.value
+             //var ideald= nop.value*nop.value
+
+             var idealsize = 2*((garo.value*sero.value)+ (sero.value*nop.value)+(nop.value*garo.value));
+             //var는 처음 나왔을 때 쓰고 sweight 또 나올 땐 안써도 됨
+
+            mmonitor.innerHTML = 
+            
+
+             "가장 이상적인 포장지의 사이즈는 " + idealsize +" cm²입니다." 
+
+            
+            
+            console.log(idealsize);
+
+        }
+
+
+    
+    </script>
+</div>
+ 
